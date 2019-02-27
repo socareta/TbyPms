@@ -186,7 +186,7 @@ Vue.component('form-reservation',{
             //console.log(type);
             if(type==='edit')
             {
-    		axios.put('http://localhost/laravel/tobeasy-travel/public/api/reservation/'+data, {
+    		axios.put('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/reservation/'+data, {
                 data: this.tdatas
               })
               .then(function (response) {
@@ -199,7 +199,7 @@ Vue.component('form-reservation',{
             }
             if(type==='new'){
                 /*console.log(this.tdatas);*/
-                axios.post('http://localhost/laravel/tobeasy-travel/public/api/reservation', {
+                axios.post('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/reservation', {
                 data: this.tdatas
                   })
                   .then(function (response) {
@@ -228,7 +228,7 @@ Vue.component('form-reservation',{
         },
         destroy(data){
             if(confirm('Are you sure to delete this reservation?')){
-                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/reservation/'+data, {
+                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/reservation/'+data, {
                 data: ''
                   })
                   .then(function (response) {
@@ -268,14 +268,14 @@ Vue.component('form-payment',{
     methods:{
         sendForm(data,type){
             if(type==='edit'){
-                axios.put('http://localhost/laravel/tobeasy-travel/public/api/payment/'+data, {data:this.tdatas})
+                axios.put('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/payment/'+data, {data:this.tdatas})
                 .then(function(response){
                     myapp.getData('payment');
                 })
                 M.toast({html:'Data was updated succefully',classes:'cyan'})
             }   
             if(type==='new'){
-                axios.post('http://localhost/laravel/tobeasy-travel/public/api/payment', {data:this.tdatas})
+                axios.post('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/payment', {data:this.tdatas})
                 .then(function(response){
                     myapp.getData('payment');
                 })
@@ -291,7 +291,7 @@ Vue.component('form-payment',{
         },
         destroy(data){
             if(confirm('Are you sure to delete this payment log?')){
-                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/payment/'+data, {data:this.tdatas})
+                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/payment/'+data, {data:this.tdatas})
                 .then(function(response){
                     myapp.getData('payment');
                 })
@@ -337,7 +337,7 @@ Vue.component('form-folio',{
             //console.log(type);
             if(type==='edit')
             {
-            axios.put('http://localhost/laravel/tobeasy-travel/public/api/reservation/'+data, {
+            axios.put('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/reservation/'+data, {
                 data: this.tdatas
               })
               .then(function (response) {
@@ -350,7 +350,7 @@ Vue.component('form-folio',{
             }
             if(type==='new'){
                 /*console.log(this.tdatas);*/
-                axios.post('http://localhost/laravel/tobeasy-travel/public/api/reservation', {
+                axios.post('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/reservation', {
                 data: this.tdatas
                   })
                   .then(function (response) {
@@ -379,7 +379,7 @@ Vue.component('form-folio',{
         },
         destroy(data){
             if(confirm('Are you sure to delete this reservation?')){
-                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/reservation/'+data, {
+                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/reservation/'+data, {
                 data: ''
                   })
                   .then(function (response) {
@@ -405,14 +405,14 @@ Vue.component('form-property',{
     methods:{
         sendForm(data,type){
             if(type==='edit'){
-                axios.put('http://localhost/laravel/tobeasy-travel/public/api/property/'+data,{data:this.tdatas})
+                axios.put('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/property/'+data,{data:this.tdatas})
                 .then(function(response){
                     myapp.getData('property');
                 })
                 M.toast({html:'Data was updated succefully',classes:'cyan'})
             }
             if(type==='new'){
-                axios.post('http://localhost/laravel/tobeasy-travel/public/api/property',{data:this.tdatas})
+                axios.post('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/property',{data:this.tdatas})
                 .then(function(response){
                     myapp.getData('property');
                 })
@@ -422,7 +422,7 @@ Vue.component('form-property',{
         },
         destroy(data){
             if(confirm('Are you sure to delete this property?')){
-                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/property/'+data,{data:''})
+                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/property/'+data,{data:''})
                 .then(function(response){
                     myapp.getData('property');
                 })
@@ -449,7 +449,7 @@ Vue.component('form-room',{
     	sendForm(data,type){
             //console.log(this.tdatas);
     		if(type==="edit"){
-                axios.put('http://localhost/laravel/tobeasy-travel/public/api/room/'+data, {
+                axios.put('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/room/'+data, {
                     data: this.tdatas
                   })
                   .then(function (response) {
@@ -462,7 +462,7 @@ Vue.component('form-room',{
                 M.toast({html: 'Data Was Update succefully!',classes:'cyan'})
             }
     		if (type==='new') {
-                axios.post('http://localhost/laravel/tobeasy-travel/public/api/room', {
+                axios.post('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/room', {
                     data: this.tdatas
                   })
                   .then(function (response) {
@@ -478,7 +478,7 @@ Vue.component('form-room',{
     	destroy(data){
     		if(confirm("Are your sure ti delete this room?"))
     		{
-    			axios.delete('http://localhost/laravel/tobeasy-travel/public/api/room/'+data, {
+    			axios.delete('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/room/'+data, {
                     data: ''
                   })
                   .then(function (response) {
@@ -509,7 +509,7 @@ Vue.component('form-sob',{
         sendForm(data,type){
             //console.log(this.tdatas);
             if(type==='edit'){
-                axios.put('http://localhost/laravel/tobeasy-travel/public/api/sob/'+data,{
+                axios.put('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/sob/'+data,{
                     data:this.tdatas
                 })
                 .then(function(response){
@@ -522,7 +522,7 @@ Vue.component('form-sob',{
                 M.toast({html:'Data was updated succefully',classes:'cyan'})
             }
             if(type==='new'){
-                axios.post('http://localhost/laravel/tobeasy-travel/public/api/sob',{
+                axios.post('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/sob',{
                     data:this.tdatas
                 })
                 .then(function(response){
@@ -537,7 +537,7 @@ Vue.component('form-sob',{
         },
         destroy(data){
             if(confirm('Are your sure to delete this sob')){
-                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/sob/'+data,{data:''})
+                axios.delete('http://localhost/laravel/tobeasy-travel/public/api/travel/v1/sob/'+data,{data:''})
                 .then(function(response){
                     myapp.getData('sob');
                 });
