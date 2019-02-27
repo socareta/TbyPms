@@ -1,0 +1,12 @@
+.table>thead{ background: #3fb618;  color: #fff; } 
+.table th{text-align: center;}
+.table th,td{border:#376e37 solid 1px !important;}
+.resForm input#rateUSd{width: 170px;}
+.resForm input#rateIdr{width: 170px;}
+.resForm input#rateContract{width: 170px;}
+.btn-success{font-weight: bold;}
+a{ text-decoration: none; }
+p.margin{
+	font-size: 8pt;
+	color:blue;
+}
